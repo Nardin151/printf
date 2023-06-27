@@ -20,7 +20,7 @@ length++;
 return (lenght);
 }
 /**
- * print_rev: reverse the string
+ * print_rev - reverse the string
  * @ap: string
  * @params: the struct containnig the paramters
  * Return: the number of bytes printed
@@ -48,12 +48,12 @@ return (bytes);
  * @params: paramters in the struct
  * Return: the number of bytes
  **/
-int print_ro13(va_list ap, params_t *params)
+int print_rot13(va_list ap, params_t *params)
 {
 (void)params;
 int i;
-char *str = va_arg(ap,char *);
-for(i = 0; i<= str[i] != NULL; i++)
+char *str = va_arg(ap, char *);
+for (i = 0; i <= str[i] != NULL; i++)
 {
 if ((str[i] >= 65) & (str[i] <= 90))
 {

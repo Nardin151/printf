@@ -7,8 +7,7 @@
 int (*get_specifier(char *s))(va_list ap, params_t *params)
 {
 int index  = 0;
-specifier_t sp[] = 
-{
+specifier_t sp[] = {
 	{"c", print_char},
 	{"d", print_int},
 	{"i", print_int},
@@ -37,7 +36,7 @@ return (NULL);
  * and calls it
  * @s: char of specifier
  * @ap: pointer
- * @param: paramter struct
+ * @params: paramter struct
  * Return: the number of printed chars
  **/
 int get_print_func(char *s, va_list ap, params_t *params)

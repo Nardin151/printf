@@ -7,7 +7,7 @@
 int _puts(char *string)
 {
 unsigned int n  = 0;
-while (string[n] !== '\0')
+while (string[n] != '\0')
 {
 _putchar(string[n]);
 string++;
@@ -29,6 +29,6 @@ while (c != '\0')
 buffer[index] = c;
 index++;
 }
-write (1, buffer, index);
-return(1);
+write(1, buffer, index);
+return (1);
 }
