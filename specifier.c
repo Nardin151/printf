@@ -21,12 +21,12 @@ specifier_t sp[] = {
 	{"p", print_address},
 	{"S", print_S},
 	{"r", print_rev},
-	{"R", print_ro13},
+	{"R", print_rot13},
 	{NULL, NULL}
 };
 for (; sp[index].specifier != NULL; index++)
 {
-if (*s == sp[index].specifier)
+if (s == sp[index].specifier)
 return (sp[index].f);
 }
 return (NULL);
@@ -55,7 +55,7 @@ return (0);
 int get_flag(char *s, params_t *params)
 {
 int i = 0;
-if (*s != NULL)
+if (s != NULL)
 {
 if (s[i] == '+')
 return (params->plus_flag = 1);
@@ -70,6 +70,7 @@ return (params->zero_flag = 1);
 else
 return (0);
 }
+return (0);
 }
 /**
  * get_modifier - returns the modifier
@@ -77,10 +78,10 @@ return (0);
  * @params: struct
  * Return: the modifier
  **/
-int get modifier(char *s, params_t *params)
+int *get_modifier(char *s, params_t *params)
 {
 int i = 0;
-if (*s != NULL)
+if (s != NULL)
 {
 if (s[i] == 'h')
 return (params->h_modifier = 1);
@@ -89,6 +90,7 @@ return (params->l_modifier = 1);
 else
 return (0);
 }
+return (0);
 }
 /**
  * get_width - returns the lenght of the format
@@ -97,12 +99,12 @@ return (0);
  * @params: params_struct
  * Return: pointer to new address
  **/
-char *get_width(char *s, params_t *params, va_list ap)
+char *get_width(char *s, va_list ap, params_t *params)
 {
 int i = 0;
 while (*s == '*')
 {
-i = va_arg(ap, int)
+i = va_arg(ap, int);
 s++;
 }
 while (_isdigit(*s))

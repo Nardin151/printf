@@ -17,7 +17,7 @@ _putchar(*start);
 length++;
 }
 }
-return (lenght);
+return (length);
 }
 /**
  * print_rev - reverse the string
@@ -29,7 +29,7 @@ int print_rev(va_list ap, params_t *params)
 {
 unsigned int size = 0;
 int bytes = 0;
-char *S1 = va_arg(ap, char*)
+char *S1 = va_arg(ap, char*);
 while (S1[bytes] != '\0')
 {
 size++;
@@ -48,14 +48,13 @@ return (bytes);
  * @params: paramters in the struct
  * Return: the number of bytes
  **/
-int print_rot13(va_list ap, params_t *params)
+int print_rot13(va_list ap, params_t *params __attribute__((unused)))
 {
-(void)params;
 int i;
 char *str = va_arg(ap, char *);
-for (i = 0; i <= str[i] != NULL; i++)
+for (i = 0; str[i] != NULL; i++)
 {
-if ((str[i] >= 65) & (str[i] <= 90))
+if (((str[i] >= 65) & (str[i] <= 90)))
 {
 if (str[i] + 13 > 90)
 _putchar((str[i] % 65) + 13);

@@ -7,25 +7,26 @@
 int _printf(const char *format, ...)
 {
 int length  = 0;
-va_list ptr;
-va_start(ptr, format);
+va_list ap;
 char *p = (char *)format;
-params_t params = PARAMS_INIT
-if (format == NULL || (format[0] == '%' && format[1] == NULL))
+char *start;
+params_t params = PARAMS_INT;
+va_start(ap, format);
+if ((format == NULL) | ((format[0] == '%') & (format[1] == '\0')))
 return (-1);
-if (format[0] == '%' && format[1] == ' ' && format[1] == NULL)
+if (format[0] == '%' && format[1] == ' ' && format[1] == '\0')
 return (-1);
 for (; *p != '\0'; p++)
 {
 if (*p != '%')
 {
-	lenght++;
+	length++;
 	_putchar(*p);
 	continue;
 }
 start = p;
 p++;
-while (get_flag(p, params_t *params))
+while (get_flag(p, &params))
 {
 p++;
 }
@@ -33,14 +34,15 @@ p = get_width(p, &params, ap);
 p = get_percision(p, &params, ap);
 if (get_modifier(p, &params) != NULL)
 {
-lenght++;
-print_from_start_to(start, p,
+length++;
+print_from_to(start, p,
 		params.l_modifier || params.h_modifier ? p - 1 : 0);
 }
 else
 {
-lenght++;
+length++;
 get_print_func(p, ap, &params);
+}
 }
 _putchar(BUF_FLUSH);
 va_end(ap);
