@@ -15,7 +15,7 @@ if (format == NULL || (format[0] == '%' && format[1] == NULL))
 return (-1);
 if (format[0] == '%' && format[1] == ' ' && format[1] == NULL)
 return (-1);
-for (;*p != '\0'; p++)
+for (; *p != '\0'; p++)
 {
 if (*p != '%')
 {
@@ -34,7 +34,8 @@ p = get_percision(p, &params, ap);
 if (get_modifier(p, &params) != NULL)
 {
 lenght++;
-print_from_start_to(start, p, params.l_modifier || params.h_modifier ? p - 1: 0);
+print_from_start_to(start, p,
+		params.l_modifier || params.h_modifier ? p - 1 : 0);
 }
 else
 {
