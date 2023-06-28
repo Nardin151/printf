@@ -20,9 +20,9 @@ return (n);
  * @c: characters
  * Return: 1 on success
  **/
-int _putchar(int c)
+int _putchar(char c)
 {
-char buffer[OUTPUT_BUF_SIZE];
+char buffer[OUT_BUF_SIZE];
 int index = 0;
 while (c != '\0')
 {

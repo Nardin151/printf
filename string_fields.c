@@ -22,6 +22,6 @@ else
 while (_isdigit(*p))
 d = d * 10 + (*p++ - '0');
 }
-params->precison = d;
+params->precision = d;
 return (p);
 }
