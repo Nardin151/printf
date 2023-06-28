@@ -57,11 +57,8 @@ typedef struct specifier
 {
 	char *specifier;
 	int (*f)(va_list, params_t *);
-<<<<<<< HEAD
+
 } specifier_t;
-=======
-}specifier_t;
->>>>>>> f11b8b35e570f48501915d93b25ed7df306d3ab3
 
 /* _put.c */
 int _puts(char *str);
@@ -81,17 +78,11 @@ int print_address(va_list ap, params_t *params);
 
 /* specifier */
 int (*get_specifier(char *s))(va_list ap, params_t *params);
-<<<<<<< HEAD
+
 int get_print_func(char *s, va_list ap, params_t *params);
 int get_flag(char *s, params_t *params);
 int get_modifier(char *s, params_t *params);
 char *get_width(char *s, params_t *params, va_list ap);
-=======
-int get_print_func(char *s,va_list ap, params_t *params);
-int get_flag(char *s, params_t *params);
-int get_modifier(char *s,va_list ap, params_t *params);
-int *get_width(char *s,va_list ap, params_t *params);
->>>>>>> f11b8b35e570f48501915d93b25ed7df306d3ab3
 
 /* convert_number*/
 int print_hex(va_list ap, params_t *params);

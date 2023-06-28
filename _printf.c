@@ -6,7 +6,7 @@
  **/
 int _printf(const char *format, ...)
 {
-<<<<<<< HEAD
+
 int sum  = 0;
 va_list ap;
 char *p, *start;
@@ -25,12 +25,12 @@ for (p = (char *)format; *p; p++)
 	{
 		sum += _putchar(*p);
 		continue;
-=======
+	}
 int length  = 0;
 va_list ap;
 char *p = (char *)format;
 char *start;
-params_t params = PARAMS_INT;
+iparams_t params = PARAMS_INIT;
 va_start(ap, format);
 if ((format == NULL) | ((format[0] == '%') & (format[1] == '\0')))
 return (-1);
@@ -43,7 +43,7 @@ if (*p != '%')
 	length++;
 	_putchar(*p);
 	continue;
->>>>>>> f11b8b35e570f48501915d93b25ed7df306d3ab3
+
 }
 start = p;
 p++;
@@ -53,7 +53,7 @@ p++;
 }
 p = get_width(p, &params, ap);
 p = get_percision(p, &params, ap);
-<<<<<<< HEAD
+
 if (get_modifier(p, &params))
 	p++;
 if (!get_specifier(p))
@@ -62,7 +62,7 @@ if (!get_specifier(p))
 
 else
 	sum += get_print_func(p, ap, &params);
-=======
+
 if (get_modifier(p, &params) != NULL)
 {
 length++;
@@ -73,7 +73,6 @@ else
 {
 length++;
 get_print_func(p, ap, &params);
->>>>>>> f11b8b35e570f48501915d93b25ed7df306d3ab3
 }
 }
 _putchar(BUF_FLUSH);
