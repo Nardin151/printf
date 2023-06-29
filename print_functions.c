@@ -85,7 +85,7 @@ int print_percent(va_list ap, params_t *params)
 {
 	(void)ap;
 	(void)params;
-	return (_putchar( ' '));
+	return (_putchar(' '));
 }
 /**
  * print_S - print format specifier
@@ -119,8 +119,3 @@ int print_S(va_list ap, params_t *params)
 	}
 	return (sum);
 }
-
-
-
-		
-

@@ -9,7 +9,7 @@
 int print_from_to(char *start, char *stop, char *except)
 {
 	int sum = 0;
-	
+
 	while (start <= stop)
 	{
 		if (start != except)
@@ -30,7 +30,7 @@ int print_rev(va_list ap, params_t *params)
 {
 	int len, sum = 0;
 	char *str = va_arg(ap, char *);
-	(void)params;	
+	(void)params;
 
 	if (str)
 	{
@@ -68,7 +68,7 @@ int print_rot13(va_list ap, params_t *params)
 			count += _putchar(arr[index]);
 		}
 		else
-			count +=_putchar(a[i]);
+			count += _putchar(a[i]);
 		i++;
 	}
 	return (count);

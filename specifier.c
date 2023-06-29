@@ -60,7 +60,7 @@ int get_print_func(char *s, va_list ap, params_t *params)
 int get_flag(char *s, params_t *params)
 {
 	int i = 0;
-	
+
 	switch (*s)
 	{
 		case '+':
@@ -81,7 +81,6 @@ int get_flag(char *s, params_t *params)
 	}
 	return (i);
 }
-	
 /**
  * get_modifier - returns the modifier
  * @s: char of the modifier

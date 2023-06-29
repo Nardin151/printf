@@ -1,13 +1,13 @@
 #include "main.h"
 /**
  * _puts - functions printing a string followed by a new line
- * @string: string of chars
+ * @str: string of chars
  * Return: lenght of the string printed
  **/
 int _puts(char *str)
 {
 	char *a = str;
-	
+
 	while (*str)
 		_putchar(*str++);
 

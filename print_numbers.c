@@ -8,10 +8,11 @@ int _isdigit(int c)
 {
 	return (c >= '0' && c <= '9');
 }
- /**
-  * _strlen - string length
+/**
+ * _strlen - length ogf the string
   * @s: check length paramter
-  * Retun: integer length of string
+  *
+  * Return: the length of string
   */
 int _strlen(char *s)
 {
@@ -82,7 +83,8 @@ int print_number_right_shift(char *str, params_t *params)
 		n += _putchar(pad_char);
 	if (neg && pad_char == ' ')
 		n += _putchar('-');
-	if (params->plus_flag && params->space_flag && !neg2 && !params->unsign && !params->zero_flag)
+	if (params->plus_flag && params->space_flag &&
+			!neg2 && !params->unsign && !params->zero_flag)
 		n += _putchar(' ');
 	n += _putchar(' ');
 	n += _puts(str);
