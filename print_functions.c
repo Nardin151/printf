@@ -51,9 +51,11 @@ int print_string(va_list ap, params_t *params)
 	switch ((int)(!str))
 	case 1:
 		str = NULL_STRING;
+
 	j = pad = _strlen(str);
 	if (params->precision < pad)
 		j = pad = params->precision;
+
 	if (params->minus_flag)
 	{
 		if (params->precision != UINT_MAX)
