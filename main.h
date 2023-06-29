@@ -24,7 +24,7 @@
  * @hashtag_flag: on if _flag specified
  * @zero_flag: on if _flag specified
  * @minus_flag: on if _flag specified
- *
+ * @space_flag: on if _flag specified
  * @width: field width specified
  * @precision: field precision specified
  *
@@ -49,7 +49,7 @@ typedef struct parameters
 } params_t;
 
 /**
- * strut specifier - struct token
+ * struct specifier - struct token
  * @specifier: format token
  * @f: function associated
  */
