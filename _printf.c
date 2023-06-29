@@ -21,11 +21,11 @@ int _printf(const char *format, ...)
 	for (p = (char *)format; *p; p++)
 	{
 		init_params(&params, ap);
-	if (*p != '%')
-	{
-		sum += _putchar(*p);
-		continue;
-	}
+		if (*p != '%')
+		{
+			sum += _putchar(*p);
+			continue;
+		}
 	start  = p;
 	p++;
 	while (get_flag(p, &params))
@@ -33,7 +33,7 @@ int _printf(const char *format, ...)
 		p++;
 	}
 	p = get_width(p, &params, ap);
-	p = get_percision(p, &params, ap);
+	p = get_precision(p, &params, ap);
 	if (get_modifier(p, &params))
 		p++;
 	if (!get_specifier(p))

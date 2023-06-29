@@ -5,14 +5,14 @@
  * @params: paramters
  * Return: number chars printed
  */
-int print_char(va_list ap,params_t *params)
+int print_char(va_list ap, params_t *params)
 {
 	char pad_char = ' ';
 	unsigned int pad = 1, sum = 0, ch = va_arg(ap, int);
 
 	if (params->minus_flag)
 		sum += _putchar(ch);
-	while (pad+= < params->width)
+	while (pad++ < params->width)
 		sum += _putchar(pad_char);
 	if (!params->minus_flag)
 		sum += _putchar(ch);
@@ -24,7 +24,7 @@ int print_char(va_list ap,params_t *params)
  * @params: paramters
  * Return: number chars printed
  */
-int print_int(va_list ap,params_t *params)
+int print_int(va_list ap, params_t *params)
 {
 	long l;
 
@@ -42,7 +42,7 @@ int print_int(va_list ap,params_t *params)
  * @params: paramters
  * Return: number chars printed
  */
-int print_string(va_list ap,params_t *params)
+int print_string(va_list ap, params_t *params)
 {
 	char *str = va_arg(ap, char *), pad_char = ' ';
 	unsigned int pad = 0, sum = 0, i = 0, j;
@@ -68,7 +68,7 @@ int print_string(va_list ap,params_t *params)
 	{
 		if (params->precision != UINT_MAX)
 			for (i = 0; i < pad; i++)
-				sum += _putchar(*str+=);
+				sum += _putchar(*str++);
 
 		else
 			sum += _puts(str);
@@ -81,7 +81,7 @@ int print_string(va_list ap,params_t *params)
  * @params: paramters
  * Return: number chars printed
  */
-int print_percent(va_list ap,params_t *params)
+int print_percent(va_list ap, params_t *params)
 {
 	(void)ap;
 	(void)params;
@@ -93,7 +93,7 @@ int print_percent(va_list ap,params_t *params)
  * @params: paramters
  * Return: number chars printed
  */
-int print_S(va_list ap,params_t *params)
+int print_S(va_list ap, params_t *params)
 {
 	char *str = va_arg(ap, char *);
 	char *hex;
@@ -110,7 +110,7 @@ int print_S(va_list ap,params_t *params)
 			hex = convert(*str, 16, 0, params);
 			if (!hex[1])
 				sum += _putchar('0');
-			sum += _putchar(hex);
+			sum += _puts(hex);
 		}
 		else
 		{

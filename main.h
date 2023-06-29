@@ -7,14 +7,14 @@
 #include<limits.h>
 #include<stdlib.h>
 
-#define OUT_BUF_SIZE 1024
-#define BUF_FLUSH -1
+#define OUTPUT_BUF_SIZE  1024
+#define BUF_FLUSH  -1
 
 #define NULL_STRING "(null)"
 
 #define PARAMS_INIT {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
 
-#define CONVERT_LOWERASE   1
+#define CONVERT_LOWERCASE   1
 #define CONVERT_UNSIGNED   2
 
 /**
@@ -104,11 +104,10 @@ int print_number_left_shift(char *str, params_t *params);
 void init_params(params_t *params, va_list ap);
 
 /*string _field.c*/
-char *get_percision(char *p, params_t *params, va_list ap);
+char *get_precision(char *p, params_t *params, va_list ap);
 
 /* _printf.c*/
 int _printf(const char *format, ...);
-/* params*/
-void init_params(params_t *params, va_list ap);
+
 
 #endif
