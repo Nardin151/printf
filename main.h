@@ -1,5 +1,5 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef _PRINTF_H
+#define _PRINTF_H
 
 #include<stdarg.h>
 #include<stdio.h>
@@ -108,5 +108,7 @@ char *get_percision(char *p, params_t *params, va_list ap);
 
 /* _printf.c*/
 int _printf(const char *format, ...);
+/* params*/
+void init_params(params_t *params, va_list ap);
 
 #endif

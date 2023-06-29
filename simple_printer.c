@@ -48,24 +48,28 @@ int print_rev(va_list ap, params_t *params)
  * @params: paramters in the struct
  * Return: the number of bytes
  **/
-int print_rot13(va_list ap, params_t *params __attribute__((unused)))
+int print_rot13(va_list ap, params_t *params)
 {
-int i;
-char *str = va_arg(ap, char *);
-for (i = 0; str[i] != NULL; i++)
-{
-if (((str[i] >= 65) & (str[i] <= 90)))
-{
-if (str[i] + 13 > 90)
-_putchar((str[i] % 65) + 13);
-else
-_putchar(str[i] + 13);
-}
-else if ((str[i] >= 97) & (str[i] <= 122))
-if (str[i] + 13 > 122)
-_putchar((str[i] % 97) + 13);
-else
-_putchar(str[i] + 13);
-}
-return (i);
+	int i, index;
+	int count = 0;
+	char arr[] =
+		"NOPQRSTUVWXYZABCDEFGHIJKLM      nopqrstuvwxyzabcdefghijklm";
+	char *a = va_arg(ap, char *);
+	(void)params;
+
+	i = 0;
+	index = 0;
+	while (a[i])
+	{
+		if ((a[i] >= 'A' && a[i] <= 'z')
+				|| (a[i] >= 'a' && a[i] <= 'z'))
+		{
+			index = a[i] - 65;
+			count += _putchar(arr[index]);
+		}
+		else
+			count +=_putchar(a[i]);
+		i++;
+	}
+	return (count);
 }
