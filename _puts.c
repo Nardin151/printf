@@ -4,31 +4,31 @@
  * @string: string of chars
  * Return: lenght of the string printed
  **/
-int _puts(char *string)
+int _puts(char *str)
 {
-unsigned int n  = 0;
-while (string[n] != '\0')
-{
-_putchar(string[n]);
-string++;
-n++;
-}
-return (n);
+	char *a = str;
+	
+	while (*str)
+		_putchar(*str++);
+
+	return (str - a);
 }
 /**
  * _putchar - prints the output of  string of chars
  * @c: characters
  * Return: 1 on success
  **/
-int _putchar(char c)
+int _putchar(int c)
 {
-char buffer[OUT_BUF_SIZE];
-int index = 0;
-while (c != '\0')
-{
-buffer[index] = c;
-index++;
-}
-write(1, buffer, index);
-return (1);
+	static int i;
+	static char buf[OUTPUT_BUF_SIZE];
+
+	if (c =	 BUF_FLUSH || >= OUTPUT_BUF_SIZE)
+	{
+		write(1, buf, i);
+		i = 0;
+	}
+	if (c != BUF_FLUSH)
+		buf[i++] = c
+	return (1);
 }

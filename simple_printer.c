@@ -8,16 +8,17 @@
  **/
 int print_from_to(char *start, char *stop, char *except)
 {
-int length = 0;
-for (; start <= stop; start++)
-{
-if (start != except)
-{
-_putchar(*start);
-length++;
-}
-}
-return (length);
+	int sum = 0;
+	
+	while (start <= stop)
+	{
+		if (start != except)
+		{
+			sum += _putvhar(*start);
+			start++;
+		}
+	}
+	return (sum);
 }
 /**
  * print_rev - reverse the string
@@ -27,20 +28,19 @@ return (length);
  **/
 int print_rev(va_list ap, params_t *params)
 {
-unsigned int size = 0;
-int bytes = 0;
-char *S1 = va_arg(ap, char*);
-while (S1[bytes] != '\0')
-{
-size++;
-bytes++;
-}
-while (size > 0)
-{
-_putchar(S1[size]);
-size--;
-}
-return (bytes);
+	int len, sum = 0;
+	char *str = va_srg(ap, char *);
+	(void)params;	
+
+	if (str)
+	{
+		for (len = 0; *str; str++)
+			len++;
+		str--;
+		for (; len > 0; len--, str+=)
+			sun += _putchar(*str);
+	}
+	return (sum);
 }
 /**
  * print_rot13 - print char + 13
